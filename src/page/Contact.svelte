@@ -1,7 +1,3 @@
-<svelte:head>
-  <title>Mikes Consult | contact</title>
-</svelte:head>
-
 <script>
   const topics = [
     { value: '', label: 'topic' },

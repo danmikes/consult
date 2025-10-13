@@ -1,49 +1,78 @@
-<header>
-  <nav class="container-fluid">
-    <ul>
-      <li>
-        <i class="fas fa-circle-nodes mr-2" style="color: yellow;"></i>
-        <strong>Mikes Consult</strong></li>
-    </ul>
-    <ul>
-      <li>
-        <a href="#home">
-          <i class="fas fa-home nav-icon" style="color: yellow;"></i>Home
-        </a>
-      </li>
-      <li>
-        <a href="#blog">
-          <i class="fas fa-feather-alt nav-icon" style="color: cyan;"></i>Blog
-        </a>
-      </li>
-      <li>
-        <a href="#contact">
-          <i class="fas fa-envelope nav-icon" style="color: magenta;"></i>Contact
-        </a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a class="icon" href="https://github.com/danmikes" aria-label="GitHub">
-          <i class="fab fa-github fa-lg" style="color: yellow;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://linkedin/in/dmikes" aria-label="LinkedIn">
-          <i class="fab fa-linkedin fa-lg" style="color: cyan;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://researchgate.net/profile/Daniel-Mikes" aria-label="ResearchGate">
-          <i class="fab fa-researchgate fa-lg" style="color: magenta;"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
+<script>
+  import { NavItem, SocialItem, enumKey } from '../constant/item';
+    import Home from '../page/Home.svelte';
 
-<style>
-  .nav-icon {
-    margin-right: 0.5rem;
-  }
-</style>
+    const navItems = [
+		{
+			name: enumKey(NavItem.Home),
+			href: `#${NavItem.Home}`,
+			icon: 'fas fa-home',
+			color: 'yellow',
+		},
+		{
+			name: enumKey(NavItem.Blog),
+			href: `#${NavItem.Blog}`,
+			icon: 'fas fa-feather-alt',
+			color: 'cyan',
+		},
+		{
+			name: enumKey(NavItem.Contact),
+			href: `#${NavItem.Contact}`,
+			icon: 'fas fa-envelope',
+			color: 'magenta',
+		}
+	];
+
+	const socialItems = [
+		{
+			label: enumKey(SocialItem.GitHub),
+			href: 'https://github.com/danmikes',
+			icon: 'fab fa-github',
+			color: 'yellow',
+		},
+		{
+			label: enumKey(SocialItem.LinkedIn),
+			href: 'https://linkedin/in/dmikes',
+			icon: 'fab fa-linkedin',
+			color: 'cyan',
+		},
+		{
+			label: enumKey(SocialItem.ResearchGate),
+			href: 'https://researchgate.net/profile/Daniel-Mikes',
+			icon: 'fab fa-researchgate',
+			color: 'magenta',
+		}
+	];
+</script>
+
+<header>
+	<nav class="container-fluid">
+		<ul>
+			<li>
+				<i class="fas fa-circle-nodes mr-2" style="color: yellow;"></i>
+				<a href="#home">
+					<strong>Mikes Consult</strong>
+				</a>
+			</li>
+		</ul>
+		<ul>
+			{#each navItems as { name, href, icon, color }}
+				<li>
+					<a href={href}>
+						<i class={icon} style="color: {color};"></i>
+						{name}
+					</a>
+				</li>
+			{/each}
+		</ul>
+		<ul>
+			{#each socialItems as { label, href, icon, color }}
+				<li>
+					<a class="icon" href={href} aria-label={label}>
+						<i class={icon} style="color: {color};"></i>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+</header>

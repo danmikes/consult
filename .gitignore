@@ -1,12 +1,10 @@
 node_modules
 
 # Output
-.svelte-kit
-/build
+/dist
 
 # System
 .DS_Store
 
 # Vite
 vite.config.js.timestamp-*
-vite.config.ts.timestamp-*

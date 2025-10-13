@@ -1,7 +1,3 @@
-<svelte:head>
-  <title>Mikes Consult | home</title>
-</svelte:head>
-
 <section class="home-page">
   <section class="title">
     <h1>IT Consulting</h1>

@@ -3,15 +3,20 @@
 - Npm Svelte
 
 ## Code
-- [github](https://github.com/danmikes/svelte.git)
+- [github](https://github.com/danmikes/svelte)
 
 ## Install
 - `npm install`
 
 ## Develop
 - `npm run dev`
-- `git push`
+- [view](http://localhost:5173)
 
-## View
-- [local](http://localhost:5173)
-- [remote](https://danmikes.github.io/svelte)
+## Preview
+- `npm run build`
+- `npx serve dist/`
+- [view](http://localhost:5173/svelte)
+
+## Deploy
+- `git push`
+- [view](https://danmikes.github.io/svelte)
