@@ -10,6 +10,12 @@
 			color: 'yellow',
 		},
 		{
+			name: enumKey(NavItem.Service),
+			href: `#${NavItem.Service}`,
+			icon: 'fas fa-cogs',
+			color: 'cyan',
+		},
+		{
 			name: enumKey(NavItem.Blog),
 			href: `#${NavItem.Blog}`,
 			icon: 'fas fa-feather-alt',
@@ -76,3 +82,9 @@
 		</ul>
 	</nav>
 </header>
+
+<style>
+	.icon:hover {
+		transform: scale(1.5);
+	}
+</style>

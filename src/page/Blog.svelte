@@ -1,74 +1,74 @@
+<script>
+  const blogSections = [
+    {
+      category: 'Coaching',
+      articles: [
+        { title: 'Improving Team Cohesion', description: 'Strategies for building stronger team relationships and collaboration.' },
+        { title: 'Effective Communication', description: 'Techniques for clear and productive team communication.' }
+      ]
+    },
+    {
+      category: 'Codebase',
+      articles: [
+        { title: 'Clean Code Principles', description: 'Best practices for maintainable and readable code.' },
+        { title: 'User Experience Design', description: 'Creating intuitive and engaging user interfaces.' }
+      ]
+    },
+    {
+      category: 'Management',
+      articles: [
+        { title: 'Project Planning Strategies', description: 'Effective approaches to project planning and execution.' },
+        { title: 'Team Coordination', description: 'Methods for smooth team collaboration and task management.' }
+      ]
+    },
+    {
+      category: 'Workflow',
+      articles: [
+        { title: 'Efficient Coding Workflows', description: 'Streamlining your development process for better productivity.' },
+        { title: 'Feedback Integration', description: 'Incorporating feedback effectively into your workflow.' }
+      ]
+    }
+  ];
+</script>
+
 <section class="blog-page">
-  <section class="title">
+  <header class="title">
     <h1>Blog</h1>
-  </section>
+  </header>
 
   <div class="container">
-    <!-- Coaching Articles -->
-    <section class="blog-section">
-      <h2>Coaching</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Improving Team Cohesion</h3>
-          <p>Strategies for building stronger team relationships and collaboration.</p>
-        </article>
-        <article class="card">
-          <h3>Effective Communication</h3>
-          <p>Techniques for clear and productive team communication.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Codebase Articles -->
-    <section class="blog-section">
-      <h2>Codebase</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Clean Code Principles</h3>
-          <p>Best practices for maintainable and readable code.</p>
-        </article>
-        <article class="card">
-          <h3>User Experience Design</h3>
-          <p>Creating intuitive and engaging user interfaces.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Management Articles -->
-    <section class="blog-section">
-      <h2>Management</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Project Planning Strategies</h3>
-          <p>Effective approaches to project planning and execution.</p>
-        </article>
-        <article class="card">
-          <h3>Team Coordination</h3>
-          <p>Methods for smooth team collaboration and task management.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Workflow Articles -->
-    <section class="blog-section">
-      <h2>Workflow</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Efficient Coding Workflows</h3>
-          <p>Streamlining your development process for better productivity.</p>
-        </article>
-        <article class="card">
-          <h3>Feedback Integration</h3>
-          <p>Incorporating feedback effectively into your workflow.</p>
-        </article>
-      </div>
-    </section>
+    {#each blogSections as section}
+      <section class="blog-section">
+        <h2>{section.category}</h2>
+        <div class="grid">
+          {#each section.articles as article}
+            <article class="card">
+              <h3>{article.title}</h3>
+              <p>{article.description}</p>
+            </article>
+          {/each}
+        </div>
+      </section>
+    {/each}
   </div>
 </section>
 
 <style>
+  .blog-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   .title {
     text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .title h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: white;
   }
 
   .blog-section {
@@ -78,29 +78,47 @@
   .blog-section h2 {
     margin-bottom: 1rem;
     color: white;
+    font-size: 1.5rem;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .card {
     background: var(--card-background-color, #2a2a2a);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem;
     border: 1px solid var(--card-border-color, #444);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: #666;
   }
 
   .card h3 {
     margin: 0 0 1rem 0;
     color: white;
+    font-size: 1.2rem;
   }
 
   .card p {
     margin: 0;
     color: #ccc;
     line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .blog-page {
+      padding: 1rem;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

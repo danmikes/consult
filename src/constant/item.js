@@ -1,5 +1,6 @@
 export const NavItem = {
   Home: 'home',
+  Service: 'service',
   Blog: 'blog',
   Contact: 'contact',
 }

@@ -2,6 +2,7 @@
 	import Head from './component/Head.svelte';
 	import Foot from './component/Foot.svelte';
 	import Home from './page/Home.svelte';
+	import Service from './page/Service.svelte';
 	import Blog from './page/Blog.svelte';
 	import Contact from './page/Contact.svelte';
 	import { NavItem } from './constant/item';
@@ -9,6 +10,7 @@
 
 	const pages = {
 		[NavItem.Home]: Home,
+		[NavItem.Service]: Service,
 		[NavItem.Blog]: Blog,
 		[NavItem.Contact]: Contact
 	};
