@@ -7,5 +7,5 @@ export default defineConfig(({ mode }) => ({
       runes: true
     }
   })],
-  base: mode === 'production' ? '/svelte' : ''
+  base: mode === 'production' ? '/consult' : ''
 }))
