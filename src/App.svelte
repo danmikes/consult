@@ -14,20 +14,20 @@
 		[NavItem.Blog]: Blog,
 		[NavItem.Contact]: Contact
 	};
-	
+
 	let currentPage = $state(NavItem.Home);
 	const PageComponent = $derived(pages[currentPage]);
 
 	$effect(() => {
 		document.title = `Mikes Consult | ${currentPage}`;
 	});
-	
+
 	onMount(() => {
 		const update = () => {
 			const hash = window.location.hash.slice(1);
 			currentPage = Object.values(NavItem).includes(hash) ? hash : NavItem.Home;
 		}
-		update();		
+		update();
 		window.addEventListener('hashchange', update);
 		return () => window.removeEventListener('hashchange', update);
 	});

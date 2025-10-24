@@ -8,7 +8,7 @@
     },
     {
       icon: 'fa-chart-bar',
-      color: 'cyan', 
+      color: 'cyan',
       title: 'Analysis',
       description: 'Solid preparation for effective strategy'
     },

@@ -20,8 +20,8 @@
     <h1>Contact</h1>
   </header>
 
-  <form 
-    action="https://formsubmit.co/00d30560e40ed766339958e949a092d7" 
+  <form
+    action="https://formsubmit.co/00d30560e40ed766339958e949a092d7"
     method="POST"
     class="form"
   >
@@ -32,24 +32,24 @@
     <div class="form-grid">
       <div class="form-group">
         <label for="name">Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          placeholder="Your name" 
-          bind:value={formData.name} 
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          bind:value={formData.name}
           required
         >
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="your.email@example.com" 
-          bind:value={formData.email} 
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your.email@example.com"
+          bind:value={formData.email}
           required
         >
       </div>
@@ -65,12 +65,12 @@
 
       <div class="form-group full-width">
         <label for="message">Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="5" 
-          placeholder="Your message..." 
-          bind:value={formData.message} 
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Your message..."
+          bind:value={formData.message}
           required
         ></textarea>
       </div>

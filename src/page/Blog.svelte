@@ -116,7 +116,7 @@
     .blog-page {
       padding: 1rem;
     }
-    
+
     .grid {
       grid-template-columns: 1fr;
     }
