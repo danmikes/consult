@@ -1,10 +1,6 @@
-node_modules
-
-# Output
-/dist
-
-# System
+/node_modules/
+/dist/
+.vscode/
 .DS_Store
-
-# Vite
+*.log
 vite.config.js.timestamp-*
